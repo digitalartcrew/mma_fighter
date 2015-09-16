@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MMA HUSTLER</title>
+	<% include ./partials/head.ejs %>
+</head>
+<body>
+<header>
+	<% include ./partials/header.ejs %>
+</header>
+<center>
+<h1></h1>
+<table class="clean responsive">
+	<thead>
+		<th>Image</th>
+		<th>Name</th>
+		<th>Gym</th>
+		<th>Age</th>
+		<th>Weight</th>
+		<th>Height</th>
+		<th>Wins</th>
+		<th>Losses</th>
+		<th>Draws</th>
+		<th></th>
+		
+	</thead>
+	<tbody>
+			<%fighters.forEach(function(fighter){%>
+			<tr>
+			<td class="id">
+					<img src= <%= fighter.image%> ><br>
+				</td>
+				<td class="id">
+					<%= fighter.name%><br>
+				</td>
+				<td class="fighter">
+					<a href="/fighters/<%=fighter.id%>">
+					<%= fighter.gym%><br></a>
+				</td>
+				<td class="author">
+					<%= fighter.age%><br>
+				</td>
+				<td class="year">
+					<%= fighter.weight%><br>
+				</td>
+				<td class="year">
+					<%= fighter.height%><br>
+				</td>
+				<td class="year">
+					<%= fighter.wins%><br>
+				</td>
+				<td class="year">
+					<%= fighter.losses%><br>
+				</td>
+				<td class="year">
+					<%= fighter.draws%><br>
+				</td>
+				<!-- <td>
+				<audio controls="controls"> <source src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg" type="audio/wav"></audio>
+				<br>
+				</td> -->
+				<td>
+				<form action="/fighters/<%= fighter.id %>?_method=delete" method="POST">
+					<button type="submit">Delete</button>
+					</form>
+				</td>
+			</tr>
+			<%});%>
+		
+			
+	</tbody>
+</table>
+
+<a class="btn btn-primary" href="/fighters/new">Add a new fighter!</a>
+
+<form action="/sort?_method=put" method="POST">
+<button type="submit">Sort Alphabetically</button>
+</form>
+
+</center>
+</table>
+</body>
+</html>

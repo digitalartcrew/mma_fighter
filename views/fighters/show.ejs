@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Show</title>
+	 <% include ../partials/head %>
+</head>
+
+
+<body>
+  <header>
+        <% include ../partials/header %>
+    </header>
+<center>
+<h1><%= track.title %></h1>
+</p>
+<p><%= track.author%></p>
+<p><%= track.year%></p>
+<p>
+<audio controls="controls"> <source src= <%= track.url%> ></audio>
+</p>
+
+<a class="btn btn-primary" href="/tracks/update/<%= track.id%>" >Update</a>
+</center>
+
+
+</body>
+</html>

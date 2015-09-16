@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Submit New Fighter</title>
+		<% include ../partials/head.ejs %>	
+</head>
+<body>
+  <header>
+        <% include ../partials/header %>
+    </header>
+<center>
+<form action="/fighters" method="POST" class="jumbotron">
+	<p>
+	<label for="image">Profile Image:</label>
+	<input type="text" id="image" name ="fighter[title]" value="" placeholder="http://www.foo.com/" required>
+	</p>
+	<p>
+	<label for="name">Name</label>
+	<input type="text" id="name" name ="fighter[name]" value="" placeholder="DJ Example" required>
+	</p>
+	<p>
+	<label for="gym">Gym</label>
+	<input type="text" id="gym" name ="fighter[gym]" value="" placeholder="2015" required>
+	</p>
+	<p>
+	<label for="age">Age</label>
+	<input type="text" id="age" name ="fighter[age]" value="" placeholder=23 >
+	</p>
+	<p>
+	<label for="weight">Weight</label>
+	<input type="text" id="weight" name ="fighter[weight]" value="" placeholder=155>
+	</p>
+	<p>
+	<label for="height">Height</label>
+	<input type="text" id="height" name ="fighter[height]" value="" placeholder="5'6">
+	</p>
+	<p>
+	<label for="wins">Wins</label>
+	<input type="text" id="wins" name ="fighter[wins]" value="" placeholder="30">
+	</p>
+	<p>
+	<label for="losses">Losses</label>
+	<input type="text" id="losses" name ="fighter[losses]" value="" placeholder="3">
+	</p>
+	<p>
+	<label for="draws">Draws</label>
+	<input type="text" id="draws" name ="fighter[draws]" value="" placeholder="2" >
+	</p>
+	<button type="submit">Submit</button>
+
+</form>
+</center>
+
+	
+</body>
+</html>
