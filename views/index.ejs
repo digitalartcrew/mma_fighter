@@ -9,7 +9,7 @@
 <header>
 	<% include ./partials/header.ejs %>
 </header>
-<center>
+<!-- <center>
 <h1></h1>
 <table class="clean responsive">
 	<thead>
@@ -56,10 +56,7 @@
 				<td class="year">
 					<%= fighter.draws%><br>
 				</td>
-				<!-- <td>
-				<audio controls="controls"> <source src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg" type="audio/wav"></audio>
-				<br>
-				</td> -->
+			
 				<td>
 				<form action="/fighters/<%= fighter.id %>?_method=delete" method="POST">
 					<button type="submit">Delete</button>
@@ -70,7 +67,27 @@
 		
 			
 	</tbody>
-</table>
+</table> -->
+
+<div class="container">
+<div class="row">
+<%fighters.forEach(function(fighter){%>
+	<center>
+	<div class="col-md-3">
+	<img src= <%= fighter.image%> >
+		<p><%= fighter.name%></p>
+	<!-- 	<p><%= fighter.gym%></p>
+		<p><%= fighter.age%></p>
+		<p><%= fighter.weight%></p>
+		<p><%= fighter.wins%></p>
+		<p><%= fighter.losses%></p>
+		<p><%= fighter.draws%></p> -->
+	</div>
+	</center>
+	<%});%>
+
+</div>
+</div>
 
 <a class="btn btn-primary" href="/fighters/new">Add a new fighter!</a>
 
