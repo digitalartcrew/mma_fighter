@@ -9,17 +9,24 @@
 <header>
 	<% include ./partials/header.ejs %>
 </header>
-<center><h1>Database for booking fighters</h1></center>
-<div class="container col-md-10 col-md-offset-1">
+<div class="headliner"><center><h2><marquee>Book A Fighter for Public Speaking Engagement, Training Partner and Group Training</marquee></h2></center></div>
+
+<div class="container col-lg-10 col-md-offset-1">
 <div class="row">
 <%fighters.forEach(function(fighter){%>
 	<center>
-	<div class="col-md-3 pro">
+	<div class="col-sm-3 pro">
 	<img src= <%= fighter.image%> >
 		<p><a href="/fighters/<%=fighter.id%>"><%= fighter.name%></a><br>
 		<%= fighter.weight%><br>
-		Wins: <%= fighter.wins%><br>
-		Losses:<%= fighter.losses%></p>
+		Wins: <%= fighter.wins%> 
+		Losses:<%= fighter.losses%><br>
+
+			<form action="/fighters/<%= fighter.id %>?_method=delete" method="POST">
+			<a class="btn btn-primary" href="/fighters/update/<%= fighter.id%>" >Update</a>
+					<button type="submit">Delete</button>
+					</form>
+					</p>
 
 	</div>
 	</center>
