@@ -9,79 +9,18 @@
 <header>
 	<% include ./partials/header.ejs %>
 </header>
-<!-- <center>
-<h1></h1>
-<table class="clean responsive">
-	<thead>
-		<th>Image</th>
-		<th>Name</th>
-		<th>Gym</th>
-		<th>Age</th>
-		<th>Weight</th>
-		<th>Height</th>
-		<th>Wins</th>
-		<th>Losses</th>
-		<th>Draws</th>
-		<th></th>
-		
-	</thead>
-	<tbody>
-			<%fighters.forEach(function(fighter){%>
-			<tr>
-			<td class="id">
-					<img src= <%= fighter.image%> ><br>
-				</td>
-				<td class="id">
-					<%= fighter.name%><br>
-				</td>
-				<td class="fighter">
-					<a href="/fighters/<%=fighter.id%>">
-					<%= fighter.gym%><br></a>
-				</td>
-				<td class="author">
-					<%= fighter.age%><br>
-				</td>
-				<td class="year">
-					<%= fighter.weight%><br>
-				</td>
-				<td class="year">
-					<%= fighter.height%><br>
-				</td>
-				<td class="year">
-					<%= fighter.wins%><br>
-				</td>
-				<td class="year">
-					<%= fighter.losses%><br>
-				</td>
-				<td class="year">
-					<%= fighter.draws%><br>
-				</td>
-			
-				<td>
-				<form action="/fighters/<%= fighter.id %>?_method=delete" method="POST">
-					<button type="submit">Delete</button>
-					</form>
-				</td>
-			</tr>
-			<%});%>
-		
-			
-	</tbody>
-</table> -->
-
-<div class="container">
+<center><h1>Database for booking fighters</h1></center>
+<div class="container col-md-10 col-md-offset-1">
 <div class="row">
 <%fighters.forEach(function(fighter){%>
 	<center>
-	<div class="col-md-3">
+	<div class="col-md-3 pro">
 	<img src= <%= fighter.image%> >
-		<p><%= fighter.name%></p>
-	<!-- 	<p><%= fighter.gym%></p>
-		<p><%= fighter.age%></p>
-		<p><%= fighter.weight%></p>
-		<p><%= fighter.wins%></p>
-		<p><%= fighter.losses%></p>
-		<p><%= fighter.draws%></p> -->
+		<p><a href="/fighters/<%=fighter.id%>"><%= fighter.name%></a><br>
+		<%= fighter.weight%><br>
+		Wins: <%= fighter.wins%><br>
+		Losses:<%= fighter.losses%></p>
+
 	</div>
 	</center>
 	<%});%>
@@ -89,12 +28,12 @@
 </div>
 </div>
 
-<a class="btn btn-primary" href="/fighters/new">Add a new fighter!</a>
 
-<form action="/sort?_method=put" method="POST">
+
+<!-- <form action="/sort?_method=put" method="POST">
 <button type="submit">Sort Alphabetically</button>
 </form>
-
+ -->
 </center>
 </table>
 </body>

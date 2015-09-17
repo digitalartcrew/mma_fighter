@@ -9,10 +9,12 @@
   <header>
         <% include ../partials/header %>
     </header>
-<center>
-<form action="/fighters" method="POST" class="jumbotron">
+
+<form action="/fighters" method="POST">
 	<p>
-	<label for="image">Profile Image:</label>
+	<label for="image">Profile Image</label>
+	</p>
+	<p>
 	<input type="text" id="image" name ="fighter[title]" value="" placeholder="http://www.foo.com/" required>
 	</p>
 	<p>
@@ -50,7 +52,7 @@
 	<button type="submit">Submit</button>
 
 </form>
-</center>
+
 
 	
 </body>

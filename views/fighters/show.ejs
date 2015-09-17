@@ -12,15 +12,27 @@
         <% include ../partials/header %>
     </header>
 <center>
-<h1><%= track.title %></h1>
-</p>
-<p><%= track.author%></p>
-<p><%= track.year%></p>
-<p>
-<audio controls="controls"> <source src= <%= track.url%> ></audio>
-</p>
+<div class="container">
+<div class="row">
 
-<a class="btn btn-primary" href="/tracks/update/<%= track.id%>" >Update</a>
+	<center>
+	<div class="col-md-12">
+	<img src= <%= fighter.image%> >
+		<p><%= fighter.name%></p>
+		<p><%= fighter.gym%></p>
+		<p><%= fighter.age%></p>
+		<p><%= fighter.weight%></p>
+		<p><%= fighter.wins%></p>
+		<p><%= fighter.losses%></p>
+		<p><%= fighter.draws%></p>
+	</div>
+	</center>
+
+
+</div>
+</div>
+
+<a class="btn btn-primary" href="/fighters/update/<%= fighter.id%>" >Update</a>
 </center>
 
 

@@ -10,8 +10,18 @@ audio {
 	width: 100%;
 }
 
+.pro {
+	border: 2px solid white;
+	width: 220px;
+	height: 220px;
+	margin: 10px;
+	background-color: black;
+}
+
 body {
-	background-color: #093f3c;
+	background-image: url(../img/mma_back.jpg);
+	 background-repeat: no-repeat;
+    background-attachment: fixed;
 	color: white;
 }
 
